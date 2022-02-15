@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/ic_navigate_before"
-        app:title="Add task" />
+        app:title="@string/toolbar_add_task" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guide_start"
