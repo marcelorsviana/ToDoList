@@ -1,12 +1,15 @@
 package com.mrsv.todolist.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.mrsv.todolist.databinding.ActivityAddTaskBinding
+import com.mrsv.todolist.datasource.TaskDataSource
 import com.mrsv.todolist.extensions.format
 import com.mrsv.todolist.extensions.text
+import com.mrsv.todolist.model.Task
 import java.util.*
 
 class AddTaskActivity : AppCompatActivity() {
@@ -37,7 +40,9 @@ class AddTaskActivity : AppCompatActivity() {
         binding.addTaskTime.editText?.setOnClickListener {
             val timePicker = MaterialTimePicker.Builder().build()
             timePicker.addOnPositiveButtonClickListener {
-                binding.addTaskTime.text = "${timePicker.hour}:${timePicker.minute}"
+                val hour = if (timePicker.hour in 0..9) "0${timePicker.hour}" else timePicker.hour
+                val minute = if(timePicker.minute in 0..9) "0${timePicker.minute}" else timePicker.minute
+                binding.addTaskTime.text = "$hour:$minute"
             }
 
             timePicker.show(supportFragmentManager, null)
@@ -48,7 +53,14 @@ class AddTaskActivity : AppCompatActivity() {
         }
 
         binding.saveTask.setOnClickListener {
-
+            val task = Task(
+                title = binding.addTaskTitle.text,
+                description = binding.addTaskDescription.text,
+                date = binding.addTaskDate.text,
+                time = binding.addTaskTime.text
+            )
+            TaskDataSource.insertTask(task)
+            Log.e("TAG", "insertListeners: " + TaskDataSource.getList())
         }
     }
 }

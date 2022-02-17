@@ -4,7 +4,7 @@ import com.google.android.material.textfield.TextInputLayout
 import java.text.SimpleDateFormat
 import java.util.*
 
-private val locale = Locale("en", "US")
+private val locale = Locale("pt", "BR")
 
 fun Date.format() : String {
     return java.text.SimpleDateFormat("MM/dd/yyyy", locale).format(this)

@@ -11,7 +11,8 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/ic_navigate_before"
-        app:title="@string/toolbar_add_task" />
+        app:title="@string/toolbar_add_task"
+        tools:layout_editor_absoluteX="0dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guide_start"
@@ -41,7 +42,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text" />
+            android:inputType="text"
+            android:contentDescription="@string/insert_title"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -59,7 +61,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textMultiLine" />
+            android:inputType="textMultiLine"
+            android:contentDescription="@string/insert_description_of_your_task"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -80,7 +83,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:focusable="false"
-            android:inputType="none" />
+            android:inputType="none"
+            android:contentDescription="@string/insert_date"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -98,7 +102,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:focusable="false"
-            android:inputType="none" />
+            android:inputType="none"
+            android:contentDescription="@string/insert_time"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
@@ -110,7 +115,8 @@
         android:textAllCaps="false"
         app:layout_constraintBottom_toTopOf="@id/save_task"
         app:layout_constraintEnd_toEndOf="@id/guide_end"
-        app:layout_constraintStart_toStartOf="@id/guide_start" />
+        app:layout_constraintStart_toStartOf="@id/guide_start"
+        android:contentDescription="@string/cancel_and_return_to_main_screen"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/save_task"
@@ -123,5 +129,6 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/guide_end"
-        app:layout_constraintStart_toStartOf="@id/guide_start" />
+        app:layout_constraintStart_toStartOf="@id/guide_start"
+        android:contentDescription="@string/save_task_button"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,4 +7,12 @@
     <string name="time">Time</string>
     <string name="save_task">Save Task</string>
     <string name="toolbar_add_task">Add task</string>
+    <string name="add_new_task">Add new task</string>
+    <string name="insert_title">Insert title</string>
+    <string name="insert_description_of_your_task">Insert description of your task</string>
+    <string name="insert_date">Insert date</string>
+    <string name="insert_time">Insert time</string>
+    <string name="cancel_and_return_to_main_screen">Cancel and return to main screen</string>
+    <string name="save_task_button">Save task</string>
+    <string name="tasks">Tasks</string>
 </resources>
