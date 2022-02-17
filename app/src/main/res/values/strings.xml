@@ -14,5 +14,6 @@
     <string name="insert_time">Insert time</string>
     <string name="cancel_and_return_to_main_screen">Cancel and return to main screen</string>
     <string name="save_task_button">Save task</string>
-    <string name="tasks">Tasks</string>
+    <string name="take_the_dog_for_a_walk">Take the dog for a walk</string>
+    <string name="itemTaskLayout_textView_tool_dateAndTime">01/01/2022 06:00 p.m.</string>
 </resources>
