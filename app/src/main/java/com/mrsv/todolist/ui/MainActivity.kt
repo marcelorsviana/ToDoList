@@ -1,5 +1,6 @@
 package com.mrsv.todolist.ui
 
+import android.app.Activity
 import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -20,13 +21,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.activityMainLayoutRecyclerViewTaskList.adapter = adapter
+        updateList()
+
         insertListeners()
     }
-
-//    private var resultLauncher =
-//        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-//            if ((result.resultCode == ))
-//        }
 
     private fun insertListeners() {
         binding.fab.setOnClickListener {
@@ -34,7 +33,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         adapter.listenerEdit = {
-            Log.e("TAG", "listenerEdit: $it")
+            val intent = Intent(this, AddTaskActivity::class.java)
+            intent.putExtra(AddTaskActivity.TASK_ID, it.id)
+            startActivityForResult(intent, CREATE_NEW_TASK)
         }
 
         adapter.listenerDelete = {
@@ -44,10 +45,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == CREATE_NEW_TASK) {
-            binding.activityMainLayoutRecyclerViewTaskList.adapter = adapter
+        if (requestCode == CREATE_NEW_TASK && resultCode == Activity.RESULT_OK) updateList()
+    }
+
+    private fun updateList() {
             adapter.submitList(TaskDataSource.getList())
-        }
     }
 
     companion object {
