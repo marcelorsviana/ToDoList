@@ -1,5 +1,6 @@
 package com.mrsv.todolist.ui
 
+import android.app.Activity
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -60,6 +61,8 @@ class AddTaskActivity : AppCompatActivity() {
                 time = binding.addTaskTime.text
             )
             TaskDataSource.insertTask(task)
+
+            setResult(Activity.RESULT_OK)
             finish()
         }
     }

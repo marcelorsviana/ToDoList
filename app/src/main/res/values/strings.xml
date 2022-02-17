@@ -16,4 +16,6 @@
     <string name="save_task_button">Save task</string>
     <string name="take_the_dog_for_a_walk">Take the dog for a walk</string>
     <string name="itemTaskLayout_textView_tool_dateAndTime">01/01/2022 06:00 p.m.</string>
+    <string name="edit">edit</string>
+    <string name="delete">Delete</string>
 </resources>
