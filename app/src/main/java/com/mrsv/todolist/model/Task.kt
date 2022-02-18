@@ -5,9 +5,8 @@ data class Task(
     val title: String,
     val description: String,
     val date: String,
-    val time: String,)
-
-{
+    val time: String,
+) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false

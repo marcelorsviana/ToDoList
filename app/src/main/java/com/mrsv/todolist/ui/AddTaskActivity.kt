@@ -2,7 +2,6 @@ package com.mrsv.todolist.ui
 
 import android.app.Activity
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.timepicker.MaterialTimePicker
@@ -47,12 +46,13 @@ class AddTaskActivity : AppCompatActivity() {
         }
 
         // TODO: Read how to config the 'addTaskTime' output layout as in 00:00 AM (or PM)
-        
+
         binding.addTaskTime.editText?.setOnClickListener {
             val timePicker = MaterialTimePicker.Builder().build()
             timePicker.addOnPositiveButtonClickListener {
                 val hour = if (timePicker.hour in 0..9) "0${timePicker.hour}" else timePicker.hour
-                val minute = if(timePicker.minute in 0..9) "0${timePicker.minute}" else timePicker.minute
+                val minute =
+                    if (timePicker.minute in 0..9) "0${timePicker.minute}" else timePicker.minute
                 binding.addTaskTime.text = "$hour:$minute"
             }
 
@@ -72,7 +72,6 @@ class AddTaskActivity : AppCompatActivity() {
                 id = intent.getIntExtra(TASK_ID, 0)
             )
             TaskDataSource.insertTask(task)
-
             setResult(Activity.RESULT_OK)
             finish()
         }
