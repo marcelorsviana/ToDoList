@@ -45,8 +45,6 @@ class AddTaskActivity : AppCompatActivity() {
             datePicker.show(supportFragmentManager, "DATE_PICKER_TAG")
         }
 
-        // TODO: Read how to config the 'addTaskTime' output layout as in 00:00 AM (or PM)
-
         binding.addTaskTime.editText?.setOnClickListener {
             val timePicker = MaterialTimePicker.Builder().build()
             timePicker.addOnPositiveButtonClickListener {

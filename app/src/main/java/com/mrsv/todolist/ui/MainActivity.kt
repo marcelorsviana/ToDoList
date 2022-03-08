@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == CREATE_NEW_TASK && resultCode == Activity.RESULT_OK) updateList()
+        recreate()
     }
 
     private fun updateList() {
