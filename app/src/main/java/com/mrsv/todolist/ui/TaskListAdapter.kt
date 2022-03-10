@@ -34,6 +34,7 @@ class TaskListAdapter : ListAdapter<Task, TaskListAdapter.TaskViewHolder>(DiffCa
             @SuppressLint("SetTextI18n")
             fun bind(item: Task) {
                 binding.itemTaskLayoutTextViewTitle.text = item.title
+                binding.itemTaskLayoutTextViewDescription.text = item.description
                 binding.itemTaskLayoutTextViewDateAndTime.text = "${item.date} ${item.time}"
                 binding.itemTaskLayoutImageViewMore.setOnClickListener{
                     showPopup(item)

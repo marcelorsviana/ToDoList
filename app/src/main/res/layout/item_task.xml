@@ -18,13 +18,24 @@
         tools:text="@string/take_the_dog_for_a_walk" />
 
     <TextView
+        android:id="@+id/itemTaskLayout_textView_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/itemTaskLayout_textView_title"
+        app:layout_constraintTop_toBottomOf="@id/itemTaskLayout_textView_title"
+        tools:text="@string/itemTaskLayout_textView_tool_description" />
+
+    <TextView
         android:id="@+id/itemTaskLayout_textView_dateAndTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@id/itemTaskLayout_textView_title"
-        app:layout_constraintTop_toBottomOf="@id/itemTaskLayout_textView_title"
+        app:layout_constraintTop_toBottomOf="@id/itemTaskLayout_textView_description"
         tools:text="@string/itemTaskLayout_textView_tool_dateAndTime" />
 
     <androidx.appcompat.widget.AppCompatImageView
